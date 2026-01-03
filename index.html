@@ -289,7 +289,52 @@ textarea {
   display: none;
   font-size: 18px;
 }
+.traffic-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
 
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.traffic-container {
+  width: 85%;
+  margin: 20px auto 60px;
+}
+
+.traffic-card:hover {
+  transform: translateY(-6px);
+}
+
+.traffic-card h3 {
+  margin-top: 0;
+  color: #467500;
+}
+
+.traffic-card p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* 按鈕 */
+.traffic-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 22px;
+  background: #467500;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.traffic-btn:hover {
+  background: #355800;
+  transform: scale(1.08);
+}
 </style>
 </head>
 <body>
@@ -325,11 +370,12 @@ textarea {
   <img src="https://pic.pimg.tw/eeooa0314/1666116871-1019636384-g.jpg">
   <img src=https://travelss.net/wp-content/uploads/2024/12/image-272.jpg>
   <img src=https://travelss.net/wp-content/uploads/2025/02/0.29037640477244775.png>
+  <img src=https://cdn2.ettoday.net/images/4198/e4198501.jpg>
 </div>
 
 <!-- -------------------- 台東地圖 -------------------- -->
 <h2 id="map-wrapper" class="section-title">台東地圖</h2>
-<h2 class="section-title">點擊地區上圓形泡泡!</h2>
+<h2 class="section-title">鼠標靠近地區上圓形泡泡!</h2>
 <div id="map-wrapper">
   <img src="https://ws.wda.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvMzEyL2NrZmlsZS9mMTk0MmFlOS1hZDZlLTQ0MzItYWQ0Yi1kYmViZDg0ZTljOGMucG5n&n=5ZyW54mHMi5wbmc%3d&icon=.png">
   <!-- 台東市 -->
@@ -430,15 +476,52 @@ textarea {
 <!-- -------------------- 交通方式 -------------------- -->
 <h2 id="traffic" class="section-title">交通方式</h2>
 
-<div class="card">
-  <h3>如何前往台東？</h3>
-  <ul>
-    <li>台鐵（普悠瑪）</li>
-    <li>台東航空站</li>
-    <li>客運與租車</li>
-  </ul>
-</div>
+<div class="traffic-container">
 
+  <!-- 火車 -->
+  <div class="traffic-card">
+    <h3>🚆 火車（台鐵）</h3>
+    <p>
+      可搭乘台鐵普悠瑪、自強號或區間車前往台東，
+      適合不想開車、想輕鬆旅行的旅客。
+    </p>
+    <a class="traffic-btn"
+       href="https://tip.railway.gov.tw/tra-tip-web/tip"
+       target="_blank">
+       查詢台鐵時刻表
+    </a>
+  </div>
+
+  <!-- 客運 -->
+  <div class="traffic-card">
+    <h3>🚌 客運</h3>
+    <p>
+      台東市區與各鄉鎮可搭乘台東客運或公路客運，
+      適合背包客與學生族群。
+    </p>
+    <a class="traffic-btn"
+       href="https://share.google/NcUJBAhmAhUMnIMkd"
+       target="_blank">
+       前往台東客運官網
+    </a>
+  </div>
+
+  <!-- 自駕 -->
+  <div class="traffic-card">
+    <h3>🚗 自駕</h3>
+    <p>
+      自行開車可自由安排時間，
+      適合想探索秘境或親子旅遊的旅客。
+    </p>
+    <a class="traffic-btn"
+       href="https://www.google.com/maps"
+       target="_blank">
+       使用 Google 地圖規劃路線
+    </a>
+  </div>
+  </div>
+
+</div>
 <!-- -------------------- 留言區 -------------------- -->
 <h2 class="section-title">留言區</h2>
 
@@ -513,4 +596,5 @@ function toggleImage(btn) {
 
 </body>
 </html>
+
 
