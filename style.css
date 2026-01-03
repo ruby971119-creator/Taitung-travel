@@ -422,3 +422,33 @@ body::before {
     transform: translateX(0);
   }
 }
+@media (max-width: 768px) {
+
+  section,
+  .section,
+  .content,
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+
+  .menu-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .menu-buttons button {
+    width: 80%;
+    max-width: 260px;
+  }
+}
+section {
+  max-width: 1200px;
+  margin: auto;
+}
+
