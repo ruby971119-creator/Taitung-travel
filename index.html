@@ -149,7 +149,11 @@ nav {
 
   z-index: 2500;
 }
-  
+
+nav.open {
+  right: 0;
+}
+
 nav a {
   display: block;
   margin: 20px 0;
@@ -160,6 +164,16 @@ nav a {
 }
 
 /* 手機版 */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: var(--main-green);
+    padding: 15px;
+  }
+  nav.show ul {
+    display: flex;
+  }
   .menu-btn {
     display: block;
   }
@@ -239,6 +253,22 @@ nav a {
   }
 }
 @media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 220px;
+    height: 100vh;
+    background: rgba(255,255,255,0.95);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  nav.active {
+    transform: translateX(0);
+  }
+}
+@media (max-width: 768px) {
 
   section,
   .section,
@@ -262,30 +292,6 @@ nav a {
     width: 80%;
     max-width: 260px;
   }
-}
-  section {
-  max-width: 1200px;
-  margin: auto;
-}
-@media (max-width: 768px) {
-
-  nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 220px;
-    height: 100vh;
-    background: rgba(255,255,255,0.95);
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 3000;
-    padding: 30px 20px;
-  }
-
-function toggleMenu() {
-  document.getElementById('navMenu').classList.toggle('active');
-}
-
 }
 
 /* -------------------- 區塊標題 -------------------- */
@@ -444,8 +450,18 @@ textarea {
   background: #355800;
   transform: scale(1.08);
 }
+
+
+
 </style>
 </head>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navMenu');
+    nav.classList.toggle('active');
+  }
+</script>
+
 <body>
 
 <!-- -------------------- 頂部＋導覽列 -------------------- -->
@@ -454,12 +470,11 @@ textarea {
 
   <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-<nav id="navMenu">
+<nav id="navbar">
   <a href="#areas">行程推薦</a>
   <a href="#foods">美食介紹</a>
   <a href="#traffic">交通方式</a>
 </nav>
-
 </header>
 
 <!-- -------------------- 目錄 -------------------- -->
@@ -657,9 +672,8 @@ setInterval(changeImage, 3000);  // 每3秒換一張
 
 // 漢堡菜單控制
 function toggleMenu() {
-  document.getElementById('navMenu').classList.toggle('active');
+  document.querySelector('nav').classList.toggle('open');
 }
-
 
 // 滾動到指定區塊
 function scrollToSection(sectionId) {
@@ -702,6 +716,7 @@ function toggleImage(btn) {
     btn.innerText = "收起圖片";
   }
 }
+
 
 </script>
 
