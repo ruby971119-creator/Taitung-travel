@@ -282,16 +282,11 @@ nav a {
     padding: 30px 20px;
   }
 
-  nav.active {
-    transform: translateX(0);
-  }
+function toggleMenu() {
+  document.getElementById('navMenu').classList.toggle('active');
 }
 
-<nav id="navMenu">
-  <a href="#areas">行程推薦</a>
-  <a href="#foods">美食介紹</a>
-  <a href="#traffic">交通方式</a>
-</nav>
+}
 
 /* -------------------- 區塊標題 -------------------- */
 .section-title {
@@ -451,7 +446,6 @@ textarea {
 }
 </style>
 </head>
-<script>
 <body>
 
 <!-- -------------------- 頂部＋導覽列 -------------------- -->
@@ -460,11 +454,12 @@ textarea {
 
   <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-<nav id="navbar">
+<nav id="navMenu">
   <a href="#areas">行程推薦</a>
   <a href="#foods">美食介紹</a>
   <a href="#traffic">交通方式</a>
 </nav>
+
 </header>
 
 <!-- -------------------- 目錄 -------------------- -->
@@ -662,8 +657,9 @@ setInterval(changeImage, 3000);  // 每3秒換一張
 
 // 漢堡菜單控制
 function toggleMenu() {
-  document.querySelector('nav').classList.toggle('open');
+  document.getElementById('navMenu').classList.toggle('active');
 }
+
 
 // 滾動到指定區塊
 function scrollToSection(sectionId) {
@@ -711,6 +707,7 @@ function toggleImage(btn) {
 
 </body>
 </html>
+
 
 
 
