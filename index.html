@@ -171,9 +171,7 @@ nav a {
     background: var(--main-green);
     padding: 15px;
   }
-  nav.show ul {
-    display: flex;
-  }
+
   .menu-btn {
     display: block;
   }
@@ -264,10 +262,7 @@ nav a {
     transition: transform 0.3s ease;
   }
 
-  nav.active {
-    transform: translateX(0);
-  }
-}
+
 @media (max-width: 768px) {
 
   section,
@@ -311,10 +306,11 @@ nav a {
     z-index: 999;
   }
 
-  nav.active {
-    transform: translateX(0);
-  }
-}
+<nav id="navMenu">
+  <a href="#areas">行程推薦</a>
+  <a href="#foods">美食介紹</a>
+  <a href="#traffic">交通方式</a>
+</nav>
 
 /* -------------------- 區塊標題 -------------------- */
 .section-title {
@@ -740,6 +736,7 @@ function toggleImage(btn) {
 
 </body>
 </html>
+
 
 
 
