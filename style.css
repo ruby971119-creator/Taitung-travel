@@ -332,54 +332,93 @@ body::before {
   background: #355800;
   transform: scale(1.08);
 }
-
 /* =========================
    手機版 RWD 設定
    ========================= */
 @media (max-width: 768px) {
-
-  /* 標題字縮小 */
-  header h1 {
-    font-size: 20px;
+  body {
+    padding: 0;
+    margin: 0;
   }
-
-  /* 頂部輪播縮小 */
+}
+@media (max-width: 768px) {
   .top-carousel {
     width: 92%;
-    height: 260px;
-    padding: 10px 0;
+    height: 220px;           /* 🔥 手機高度縮小 */
+    margin: 20px auto;
+    border-radius: 14px;
   }
 
   .top-carousel img {
-    height: calc(100% - 20px);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;       /* 🔥 手機建議用 cover */
+    border-radius: 14px;
   }
-
-  /* 地圖縮小 */
-  #map-wrapper {
-    width: 90%;
-  }
-
-  /* 所有卡片統一 */
-  .card,
-  .traffic-card {
-    width: 92%;
-    padding: 16px;
-  }
-
-  /* 按鈕不要太大 */
-  .catalog-btn,
-  .traffic-btn {
-    font-size: 14px;
-    padding: 10px 18px;
-  }
-
-  /* 漢堡按鈕確保可點 */
-  .menu-btn {
-    font-size: 28px;
-    top: 12px;
-    right: 14px;
-  }
-
 }
-  
+@media (max-width: 768px) {
+  .map-section {
+    flex-direction: column;   /* 🔥 改成直排 */
+    gap: 16px;
+  }
 
+  .map {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .map text {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;   /* 🔥 一排一張 */
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .card img {
+    height: 180px;
+    object-fit: cover;
+  }
+}
+@media (max-width: 768px) {
+  .transport-list {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .transport-card {
+    width: 100%;
+    text-align: center;
+  }
+
+  .transport-card a {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 220px;
+    height: 100vh;
+    background: rgba(255,255,255,0.95);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  nav.active {
+    transform: translateX(0);
+  }
+}
