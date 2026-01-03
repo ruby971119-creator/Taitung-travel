@@ -285,5 +285,52 @@ body::before {
   .map-point:hover + .tooltip {
     display: block;
   }
-  
+  /* -------------------- 交通方式區 -------------------- */
+.traffic-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.traffic-container {
+  width: 85%;
+  margin: 20px auto 60px;
+}
+
+.traffic-card:hover {
+  transform: translateY(-6px);
+}
+
+.traffic-card h3 {
+  margin-top: 0;
+  color: #467500;
+}
+
+.traffic-card p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* 按鈕 */
+.traffic-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 22px;
+  background: #467500;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.traffic-btn:hover {
+  background: #355800;
+  transform: scale(1.08);
+}
+
   
