@@ -164,14 +164,6 @@ nav a {
 }
 
 /* 手機版 */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: var(--main-green);
-    padding: 15px;
-  }
-
   .menu-btn {
     display: block;
   }
@@ -251,19 +243,6 @@ nav a {
   }
 }
 @media (max-width: 768px) {
-  nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 220px;
-    height: 100vh;
-    background: rgba(255,255,255,0.95);
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-  }
-
-
-@media (max-width: 768px) {
 
   section,
   .section,
@@ -303,8 +282,14 @@ nav a {
     background: rgba(255,255,255,0.95);
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    z-index: 999;
+    z-index: 3000;
+    padding: 30px 20px;
   }
+
+  nav.active {
+    transform: translateX(0);
+  }
+}
 
 <nav id="navMenu">
   <a href="#areas">行程推薦</a>
@@ -471,12 +456,6 @@ textarea {
 </style>
 </head>
 <script>
-function toggleMenu() {
-const nav = document.getElementById('navMenu');
-nav.classList.toggle('active');
-}
-</script>
-
 <body>
 
 <!-- -------------------- 頂部＋導覽列 -------------------- -->
@@ -736,6 +715,7 @@ function toggleImage(btn) {
 
 </body>
 </html>
+
 
 
 
